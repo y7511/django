@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <style>
+    body {
+      background-color: #e8ecf1;
+    }
+    .contact-form {
+      background-color: #d7cfcf;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
+    }
+    .contact-form h2 {
+      color: #333333;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+      border: 1px solid #ced4da;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 20px;
+      width: 100%;
+    }
+    .contact-form textarea {
+      resize: none;
+    }
+    .contact-form button[type="submit"] {
+      background-color: #06080a;
+      color: #9b8585;
+      border: none;
+      border-radius: 5px;
+      padding: 12px 20px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      width: 100%;
+    }
+    .contact-form button[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="contact-form">
+        <h2>Contact Us</h2>
+        <form action="/" method="POST">
+          {% csrf_token %} 
+          <div class="form-group">
+            <input type="text" class="form-control" id="name" name="name" placeholder="Name"> <!-- Added name attribute -->
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email"> <!-- Added name attribute -->
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" id="message" name="message" rows="5" placeholder="Message"></textarea> <!-- Added name attribute -->
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
